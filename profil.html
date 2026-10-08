@@ -1,50 +1,24 @@
-<!DOCTYPE html>
-<!--
-  KERANGKA PROFIL — PABW 2026/2027 — Pertemuan 4
-  ==================================================================
-  Berkas ini SUDAH LENGKAP dan sudah lolos W3C Nu Html Checker serta
-  Lighthouse Accessibility. JANGAN mengubah struktur, landmark, label,
-  atau alt untuk memperbaiki tampilan — tampilan diubah dari berkas CSS.
-
-  Tugas Anda di Pertemuan 4:
-    1. Ganti isi yang ditandai  [ISI]  dengan milik Anda sendiri.
-    2. Buat lima berkas CSS di folder css/ lalu buka komentar
-       lima baris <link> di bawah  (lihat Lembar D).
-    3. WAJIB — tambahkan MINIMAL TIGA bagian baru di dalam <main>,
-       masing-masing memakai elemen semantik yang belum terpakai dan
-       berbeda satu sama lain  (lihat Lembar B.3). Setiap bagian wajib
-       diberi gaya memakai token yang sama, lalu dievaluasi W3C dan WCAG.
--->
+<!doctype html>
 <html lang="id">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <!-- ISI 1 — judul tab dan hasil pencarian. Ganti dengan nama Anda. -->
-  <title>Profil M. Naufal Allaam Najib — PABW 2026/2027</title>
-  <meta name="description" content="Halaman profil mahasiswa PABW: tentang saya, karya, dan kontak.">
-
-  <!-- LEMBAR D — buat lima berkas di folder css/, lalu buka komentar ini.
-       URUTAN PEMUATAN MENENTUKAN CASCADE: tokens, base, layout, komponen, tema.
-       Lapisan paling bawah menang tanpa perlu !important. -->
+  <meta name="description" content="Halaman profil mahasiswa PABW.">
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/komponen.css">
   <link rel="stylesheet" href="css/tema.css">
+  <title>Profil mahasiswa</title>
 </head>
 <body>
   <a class="lewati" href="#utama">Lewati ke konten utama</a>
 
   <header class="kepala">
-    <!-- ISI 2 — nama Anda, atau nama panggilan yang Anda pakai. -->
-    <h1>M. Naufal Allaam Najib</h1>
-    <!-- ISI 3 — satu kalimat tentang diri Anda. -->
-    <p class="tagline">Mahasiswa Program Studi Informatika Universitas Islam Indonesia yang memiliki minat
-pada teknologi dan pemrograman. Memiliki kemampuan berpikir logis, problem solving,
-serta ketertarikan untuk mempelajari dan mengeksplorasi hal-hal baru. Terbiasa bekerja
-secara kolaboratif dan memiliki motivasi untuk terus mengembangkan kemampuan serta
-memberikan kontribusi dalam lingkungan yang dinamis.</p>
+    <h1 id="nama-profil"></h1>
+    <p class="tagline" id="peran-profil"></p>
     <nav aria-label="Navigasi utama">
       <ul>
         <li><a href="#tentang">Tentang</a></li>
@@ -55,119 +29,94 @@ memberikan kontribusi dalam lingkungan yang dinamis.</p>
   </header>
 
   <main id="utama">
-
     <section id="tentang">
       <h2>Tentang saya</h2>
-
       <figure class="foto">
-        <!-- ISI 4 — pakai foto Anda sendiri dengan nama berkas yang sama,
-             atau biarkan berkas contoh apa adanya. -->
-        <img src="media/foto-profil.jpeg"
-             alt="Foto diri Nama Anda memakai kemeja putih."
-             width="480" height="480" loading="lazy">
-        <figcaption>Foto profil — M. Naufal Allaam Najib</figcaption>
+        <img src="media/foto-profil.jpeg" alt="Foto profil mahasiswa." width="480" height="480" loading="lazy">
+        <figcaption id="keterangan-foto"></figcaption>
       </figure>
-
-      <!-- ISI 5 — dua sampai tiga kalimat: asal, minat, dan hal yang
-           sedang Anda pelajari. -->
-      <p>Saya mahasiswa Program Studi Informatika Universitas Islam Indonesia.
-         Saya tertarik pada pengembangan web, khususnya bagian tampilan,
-         karena di sana keputusan teknis langsung terlihat hasilnya.</p>
-
+      <div>
+        <p id="perkenalan"></p>
         <input type="checkbox" id="tema" class="pengalih-tema">
-        <label for="tema" class="tombol-tema">Tema gelap</label>
-
-
+        <label for="tema" class="tombol-tema" id="label-tema">Tema gelap</label>
+      </div>
       <div class="table-wrap">
         <table>
-          <!-- ISI 6 — judul tabel dan isi minimal tiga baris. -->
-          <caption>Kegiatan yang saya ikuti semester ini</caption>
-
-          <tbody>
-            <tr>
-              <th scope="row">Belum Mengikuti</th>
-            </tr>
-          </tbody>
+          <caption>Keahlian yang sedang saya kembangkan</caption>
+          <thead>
+            <tr><th scope="col">Keahlian</th><th scope="col">Tingkat</th></tr>
+          </thead>
+          <tbody id="daftar-keahlian"></tbody>
         </table>
       </div>
     </section>
 
     <section id="karya">
       <h2>Karya saya</h2>
-      <!-- ISI 7 — tiga karya, proyek, atau hal yang pernah Anda buat.
-           Boleh tugas kuliah, karya pribadi, atau hobi. -->
-      <ul>
-        <li>Poster Lomba 17 Agustus</li>
-        <li>Expo Semester 1 — Membuat Prototype Aplikasi bank sampah (Pengembangan prototype bisnis membuat Alat kesehatan untuk para pelari)</li>
-        <li>Expo Semester 2 — Membuat desktop app toko online pakaian dengan bahan dasar kulit</li>
-      </ul>
+      <p id="ringkasan-proyek" aria-live="polite"></p>
+      <div id="filter" role="group" aria-label="Filter kategori proyek">
+        <button type="button" data-kategori="semua" class="aktif" aria-pressed="true">Semua</button>
+        <button type="button" data-kategori="aplikasi" aria-pressed="false">Aplikasi</button>
+        <button type="button" data-kategori="desain" aria-pressed="false">Desain</button>
+      </div>
+      <ul id="daftar"></ul>
+      <p id="pesan-kosong" hidden>Tidak ada proyek pada kategori itu.</p>
     </section>
 
     <section id="kontak">
       <h2>Hubungi saya</h2>
       <p>Isi formulir berikut. Semua kolom bertanda wajib harus diisi.</p>
-
       <form action="#" method="post">
         <fieldset>
           <legend>Data pengirim</legend>
-
           <p>
             <label for="nama">Nama lengkap</label>
-            <input id="nama" name="nama" type="text"
-                   autocomplete="name" required>
+            <input id="nama" name="nama" type="text" autocomplete="name" required>
           </p>
-
           <p>
             <label for="email">Email</label>
-            <input id="email" name="email" type="email"
-                   autocomplete="email" required>
+            <input id="email" name="email" type="email" autocomplete="email" required>
           </p>
-
           <p>
             <label for="nim">NIM</label>
-            <!-- ISI 8 — ganti angka di dalam pattern dengan NIM Anda sendiri. -->
-            <input id="nim" name="nim" type="text" inputmode="numeric"
-                   pattern="25523021{8}" aria-describedby="nim-bantuan" required>
-            <span id="nim-bantuan">Delapan digit angka, contoh 105230102.</span>
+            <input id="nim" name="nim" type="text" inputmode="numeric" pattern="[0-9]{8}" aria-describedby="nim-bantuan" required>
+            <span id="nim-bantuan">Delapan digit angka.</span>
           </p>
-
           <p>
             <label for="pesan">Pesan</label>
             <textarea id="pesan" name="pesan" rows="4" required></textarea>
           </p>
-
           <button type="submit">Kirim</button>
         </fieldset>
       </form>
     </section>
 
-    <!-- STRUKTUR TAMBAHAN (Lembar B.3) — minimal tiga bagian baru di sini,
-         sebelum tag penutup </main>. Wajib: satu <h2> per bagian, atribut id
-         yang belum terpakai, elemen semantik yang berbeda satu sama lain, dan
-         gaya memakai token yang sama. Tiga section di atas JANGAN diubah. -->
+    <section id="tanya-jawab">
+      <h2>Tanya jawab</h2>
+      <details>
+        <summary>Apa yang sedang saya pelajari?</summary>
+        <p>Pengembangan web, JavaScript, dan cara mengolah data halaman secara terstruktur.</p>
+      </details>
+      <details>
+        <summary>Mengapa memilih Informatika?</summary>
+        <p>Saya tertarik memakai teknologi untuk membangun solusi yang berguna.</p>
+      </details>
+    </section>
 
-        <section id="tanya-jawab">
-          <h2>Tanya jawab</h2>
-
-            <details>
-              <summary>Apa yang sedang saya pelajari?</summary>
-              <p>CSS dan cara menyusun tampilan yang konsisten lewat token.</p>
-            </details>
-
-            <details>
-              <summary>Mengapa memilih Informatika?</summary>
-              <p> Saya tertarik dengan teknologi dan ingin mempelajari cara
-                membuat solusi menggunakan perangkat lunak.</p>
-            </details>
-        </section>
-
-        <section id="lini-masa">
-
+    <section id="lini-masa">
+      <h2>Lini masa pembelajaran</h2>
+      <ol>
+        <li>Memulai dasar pemrograman dan pemecahan masalah.</li>
+        <li>Mengembangkan prototipe aplikasi bank sampah pada Expo Semester 1.</li>
+        <li>Membuat aplikasi desktop toko pakaian berbahan kulit pada Expo Semester 2.</li>
+      </ol>
+    </section>
   </main>
 
   <footer class="kaki">
-    <!-- ISI 9 — nama, NIM, tahun. -->
-    <p>M. Naufal Allaam Najib · 25523063 · <time datetime="2026">2026</time></p>
+    <p id="identitas-footer"></p>
   </footer>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/dom.js"></script>
 </body>
 </html>
