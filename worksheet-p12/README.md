@@ -36,6 +36,25 @@ npm run preview
 
 Folder `dist/` sengaja diabaikan Git. Catat ukuran aset dari Network panel setelah preview berjalan.
 
+## Lembar G — Tiket keluar
+
+1. `dependencies` dibutuhkan aplikasi saat berjalan (contoh: `vue`); `devDependencies` dipakai untuk pengembangan/build (contoh: `vite`).
+2. `package-lock.json` mengunci versi paket agar instalasi sama; `node_modules/` dapat dibuat ulang dengan `npm install`.
+3. `npm create vite@latest . -- --template vue` membuat kerangka Vue; titik berarti folder saat ini.
+4. Template Vue merender ulang berdasarkan state reaktif; Vue yang mengatur pembaruan itu.
+5. Props bersifat satu arah agar sumber data induk tetap konsisten dan mudah dilacak.
+6. `npm run dev` melayani sumber dengan pembaruan otomatis; `npm run preview` menyajikan hasil di `dist/` untuk pemeriksaan produksi.
+7. `dist/` adalah keluaran build yang dapat dibuat ulang, jadi tidak perlu memenuhi riwayat Git.
+
+Hal yang perlu diingat: jalankan build hanya setelah memastikan impor dan nama berkas memakai huruf besar-kecil yang sama.
+
+## Pemeriksaan akhir
+
+- Empat komponen berada di `src/components/`; `KepalaProfil` menerima props `profil`.
+- State reaktif dan localStorage berada di `src/state.js` dan `src/simpanan.js`.
+- `node_modules/` dan `dist/` diabaikan melalui `.gitignore`.
+- Validasi dev/build/preview serta pembuatan `package-lock.json` menunggu pemasangan Node.js LTS.
+
 ## Bantuan AI
 
 AI membantu memigrasikan struktur halaman yang tersedia ke Vue, menyusun komponen, dan menuliskan dokumentasi. Data profil, isi proyek, serta peninjauan akhir tetap menjadi tanggung jawab mahasiswa.
