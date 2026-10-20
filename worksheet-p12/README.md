@@ -20,6 +20,10 @@ Kerangka Vite/Vue telah disiapkan secara manual karena `npm create vite` tidak d
 
 Lima berkas CSS dan foto profil yang tersedia telah dipindahkan apa adanya ke `src/`. Data halaman dipisahkan ke `src/data.js` dan diberi `id` unik untuk kebutuhan `v-for`. Berkas `api.js` serta CSS responsif yang disebut worksheet tidak ada pada sumber P8 yang tersedia, sehingga tidak dapat dipindahkan tanpa mengarang isi baru.
 
+## Lembar E — Keadaan dan simpanan
+
+`state` adalah objek `reactive()`. Kategori aktif dibaca sekali lewat `onMounted`, disimpan kembali lewat `watch`, dan dapat dikembalikan ke nilai bawaan dengan tombol atur ulang. Kunci penyimpanan tetap `pabw-p11` dengan versi data `1`.
+
 ## Bantuan AI
 
 AI membantu memigrasikan struktur halaman yang tersedia ke Vue, menyusun komponen, dan menuliskan dokumentasi. Data profil, isi proyek, serta peninjauan akhir tetap menjadi tanggung jawab mahasiswa.
