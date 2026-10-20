@@ -55,6 +55,10 @@ Hal yang perlu diingat: jalankan build hanya setelah memastikan impor dan nama b
 - `node_modules/` dan `dist/` diabaikan melalui `.gitignore`.
 - Validasi dev/build/preview serta pembuatan `package-lock.json` menunggu pemasangan Node.js LTS.
 
+## Lembar H — Rubrik dan rujukan
+
+Rubrik sudah ditinjau. Sebelum penyerahan, pasang Node.js LTS, jalankan instalasi dan tiga perintah npm pada lembar F, lalu perbarui README dengan versi, port, dan hasil ukuran build yang benar-benar terukur.
+
 ## Bantuan AI
 
 AI membantu memigrasikan struktur halaman yang tersedia ke Vue, menyusun komponen, dan menuliskan dokumentasi. Data profil, isi proyek, serta peninjauan akhir tetap menjadi tanggung jawab mahasiswa.
