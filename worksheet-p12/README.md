@@ -2,15 +2,15 @@
 
 ## Lembar A — Perkakas
 
-- Node.js: belum terpasang/terdeteksi pada komputer saat proyek ini disiapkan.
-- npm: belum terpasang/terdeteksi pada komputer saat proyek ini disiapkan.
+- Node.js: `v24.22.0`.
+- npm: `11.19.1`.
 - Git: tersedia (`2.56.0.windows.2`).
 
 Proyek ini disiapkan dari halaman profil yang tersedia pada Worksheet P8. Worksheet menyebut aset P11, tetapi berkas P11 lengkap tidak tersedia di folder kerja saat ini.
 
 ## Status validasi
 
-`npm run dev`, `npm run build`, dan `npm run preview` belum dapat dijalankan sampai Node.js LTS (minimal Node 20.19 atau 22.12) dipasang dan `npm install` selesai.
+`npm run dev`, `npm run build`, dan `npm run preview` telah berhasil dijalankan. Server development memakai port `5173`; preview produksi memakai port `4173`.
 
 ## Lembar B — Kerangka Vue
 
@@ -26,15 +26,15 @@ Lima berkas CSS dan foto profil yang tersedia telah dipindahkan apa adanya ke `s
 
 ## Lembar F — Build produksi
 
-Belum diverifikasi di komputer ini karena Node.js dan npm tidak tersedia. Setelah memasang Node.js LTS, jalankan berikut dari `worksheet-p12/`:
+`npm run build` berhasil memakai Vite `6.4.4`, menghasilkan `dist/`. `npm run preview` memberi respons HTTP 200 pada `http://127.0.0.1:4173/`.
 
-```sh
-npm install
-npm run build
-npm run preview
-```
+| Aset produksi | Ukuran | Gzip |
+| --- | ---: | ---: |
+| CSS | 9.60 kB | 2.64 kB |
+| JavaScript | 73.63 kB | 29.29 kB |
+| Foto profil | 1,850.74 kB | — |
 
-Folder `dist/` sengaja diabaikan Git. Catat ukuran aset dari Network panel setelah preview berjalan.
+Folder `dist/` sengaja diabaikan Git.
 
 ## Lembar G — Tiket keluar
 
@@ -53,11 +53,11 @@ Hal yang perlu diingat: jalankan build hanya setelah memastikan impor dan nama b
 - Empat komponen berada di `src/components/`; `KepalaProfil` menerima props `profil`.
 - State reaktif dan localStorage berada di `src/state.js` dan `src/simpanan.js`.
 - `node_modules/` dan `dist/` diabaikan melalui `.gitignore`.
-- Validasi dev/build/preview serta pembuatan `package-lock.json` menunggu pemasangan Node.js LTS.
+- `package-lock.json` sudah dibuat dan ikut disimpan; dev, build, serta preview telah tervalidasi.
 
 ## Lembar H — Rubrik dan rujukan
 
-Rubrik sudah ditinjau. Sebelum penyerahan, pasang Node.js LTS, jalankan instalasi dan tiga perintah npm pada lembar F, lalu perbarui README dengan versi, port, dan hasil ukuran build yang benar-benar terukur.
+Rubrik sudah ditinjau. Versi perkakas, port, dan ukuran hasil build yang terukur telah dicatat di README ini.
 
 ## Bantuan AI
 
