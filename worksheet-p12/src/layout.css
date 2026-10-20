@@ -1,0 +1,355 @@
+header.kepala {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-8) var(--space-4) var(--space-6);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(96, 165, 250, 0.04));
+  border: 1px solid var(--color-border);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow-1);
+}
+
+header.kepala h1 {
+  max-width: 18ch;
+}
+
+header.kepala .tagline {
+  max-width: 70ch;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  transform: translateY(-1px);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-surface);
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  padding-block: var(--space-8);
+}
+
+main > section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  padding: var(--card-pad);
+}
+
+#tentang {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+#tentang > h2,
+#karya > h2,
+#kontak > h2,
+#galeri > h2,
+#tanya-jawab > h2,
+#lini-masa > h2 {
+  grid-column: 1 / -1;
+  margin-bottom: var(--space-2);
+}
+
+#tentang .foto {
+  display: grid;
+  gap: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-soft);
+  padding: var(--space-4);
+}
+
+#tentang .foto img {
+  border-radius: var(--radius-md);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+#tentang .foto figcaption {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+#tentang > p,
+#tentang .table-wrap,
+#kontak > p,
+#karya > ul,
+#galeri > ul,
+#tanya-jawab > details,
+#lini-masa > ol {
+  grid-column: 2;
+  min-width: 0;
+}
+
+#tentang > p {
+  color: var(--color-fg);
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#tentang table {
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  margin-top: var(--space-4);
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  table-layout: auto;
+  word-break: break-word;
+}
+
+#tentang th,
+#tentang td {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+#tentang caption {
+  margin-bottom: var(--space-3);
+  font-weight: 700;
+  text-align: left;
+}
+
+#tentang th,
+#tentang td {
+  padding: 0.8rem 0.9rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+#tentang thead th {
+  background: var(--color-surface-soft);
+  color: var(--color-primary);
+}
+
+#karya ul {
+  display: grid;
+  gap: var(--space-4);
+  list-style: none;
+  padding-left: 0;
+}
+
+#karya li {
+  position: relative;
+  padding: 0.85rem 0.85rem 0.85rem 1.5rem;
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--color-surface-soft);
+}
+
+#karya li::before {
+  content: "";
+  position: absolute;
+  left: -0.45rem;
+  top: 1.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+#kontak form {
+  max-width: 40rem;
+}
+
+#kontak fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  background: var(--color-surface-soft);
+}
+
+#kontak legend {
+  padding: 0 0.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+#kontak p {
+  display: grid;
+  gap: var(--space-2);
+  margin-block-end: var(--space-4);
+}
+
+#galeri ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+  list-style: none;
+  padding-left: 0;
+}
+
+#galeri li figure {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-soft);
+}
+
+#galeri li figure img {
+  border-radius: var(--radius-md);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+#galeri li figcaption {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+#tanya-jawab {
+  display: grid;
+  gap: var(--space-4);
+}
+
+#tanya-jawab details {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+  padding: 0.9rem 1rem;
+}
+
+#tanya-jawab summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+#tanya-jawab details p {
+  margin-top: 0.75rem;
+  color: var(--color-muted);
+}
+
+#lini-masa ol {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: var(--space-4);
+  position: relative;
+}
+
+#lini-masa li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-left: 0.4rem;
+}
+
+#lini-masa li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+#lini-masa li:not(:last-child) {
+  border-left: 2px solid rgba(37, 99, 235, 0.25);
+  padding-bottom: 0.3rem;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 0.75rem;
+  }
+
+  header.kepala {
+    padding: 1.5rem 1rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  nav ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  nav a {
+    width: 100%;
+  }
+
+  main {
+    gap: 1.25rem;
+    padding-block: 1.5rem;
+  }
+
+  main > section {
+    padding: 1rem;
+  }
+
+  #tentang {
+    grid-template-columns: 1fr;
+  }
+
+  #tentang > p,
+  #tentang .table-wrap,
+  #kontak > p,
+  #karya > ul,
+  #galeri > ul,
+  #tanya-jawab > details,
+  #lini-masa > ol {
+    grid-column: 1;
+  }
+
+  #galeri ul {
+    grid-template-columns: 1fr;
+  }
+
+  #kontak fieldset {
+    padding: 1rem;
+  }
+
+  footer.kaki {
+    padding-top: 0.5rem;
+    text-align: center;
+  }
+}
+
+footer.kaki {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 0;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
