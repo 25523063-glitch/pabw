@@ -24,6 +24,18 @@ Lima berkas CSS dan foto profil yang tersedia telah dipindahkan apa adanya ke `s
 
 `state` adalah objek `reactive()`. Kategori aktif dibaca sekali lewat `onMounted`, disimpan kembali lewat `watch`, dan dapat dikembalikan ke nilai bawaan dengan tombol atur ulang. Kunci penyimpanan tetap `pabw-p11` dengan versi data `1`.
 
+## Lembar F — Build produksi
+
+Belum diverifikasi di komputer ini karena Node.js dan npm tidak tersedia. Setelah memasang Node.js LTS, jalankan berikut dari `worksheet-p12/`:
+
+```sh
+npm install
+npm run build
+npm run preview
+```
+
+Folder `dist/` sengaja diabaikan Git. Catat ukuran aset dari Network panel setelah preview berjalan.
+
 ## Bantuan AI
 
 AI membantu memigrasikan struktur halaman yang tersedia ke Vue, menyusun komponen, dan menuliskan dokumentasi. Data profil, isi proyek, serta peninjauan akhir tetap menjadi tanggung jawab mahasiswa.
