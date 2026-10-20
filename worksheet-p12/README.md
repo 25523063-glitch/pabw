@@ -16,6 +16,10 @@ Proyek ini disiapkan dari halaman profil yang tersedia pada Worksheet P8. Worksh
 
 Kerangka Vite/Vue telah disiapkan secara manual karena `npm create vite` tidak dapat dijalankan tanpa Node.js dan npm. Setelah Node.js tersedia, jalankan `npm install` untuk membuat `package-lock.json` dan memasang dependensi.
 
+## Lembar C — Aset yang dipindahkan
+
+Lima berkas CSS dan foto profil yang tersedia telah dipindahkan apa adanya ke `src/`. Data halaman dipisahkan ke `src/data.js` dan diberi `id` unik untuk kebutuhan `v-for`. Berkas `api.js` serta CSS responsif yang disebut worksheet tidak ada pada sumber P8 yang tersedia, sehingga tidak dapat dipindahkan tanpa mengarang isi baru.
+
 ## Bantuan AI
 
 AI membantu memigrasikan struktur halaman yang tersedia ke Vue, menyusun komponen, dan menuliskan dokumentasi. Data profil, isi proyek, serta peninjauan akhir tetap menjadi tanggung jawab mahasiswa.
